@@ -1,0 +1,29 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add New User</h4>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="onSubmit(); modal.close('')" class="form">
+      <div class="form-group">
+        <label for="">FirstName</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="addUserData.firstname" name="firstname" type="text" class="form-control" required>
+        </div>
+        <label for="">LastName</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="addUserData.lastname" name="lastname" type="text" class="form-control" required>
+        </div>
+        <label for="">Email</label>
+        <div class="input-group mb-3">
+          <input [(ngModel)]="addUserData.email" name="email" type="text" class="form-control" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="modal.close('Save click')">Cansel</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<button class="btn btn-success" (click)="open(content)">Add User</button>

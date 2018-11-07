@@ -1,0 +1,21 @@
+<br>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr style="text-align:center">
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <!-- <th>Action</th> -->
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of usersAuth; index as i">
+    <tr style="text-align:center">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.email}}</td>
+      <!-- <td>
+        <button class="btn btn-info">Edit</button>
+        <button class="btn btn-danger ml-2" (click)="onRemove(user)">Delete</button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>

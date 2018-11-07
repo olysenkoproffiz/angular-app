@@ -1,0 +1,29 @@
+<br>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr style="text-align:center">
+      <th scope="col">#</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of users; index as i">
+    <tr style="text-align:center">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.firstname}}</td>
+      <td>{{user.lastname}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <app-modal-edit [currentUser]="user"></app-modal-edit>
+        <button class="btn btn-danger ml-2" (click)="onRemove(user)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align:center">
+  <app-modal></app-modal>
+</div>
