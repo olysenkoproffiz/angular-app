@@ -17,10 +17,13 @@ export class TitleAppComponent implements OnInit {
 
   // constructor passes the service like a dependency
   constructor(private http: Http, private _auth: UsersService) {
-    this.http.get("http://localhost:3001/api/users").subscribe(response => {
-      this.users = response.json();
-      console.log(this.users);
-    });
+    // this.http.get("http://localhost:3001/api/users").subscribe(response => {
+    this.http
+      .get("https://heroku-react-users-app.herokuapp.com/api/users")
+      .subscribe(response => {
+        this.users = response.json();
+        console.log(this.users);
+      });
   }
 
   ngOnInit() {}
