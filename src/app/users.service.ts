@@ -5,8 +5,12 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class UsersService {
-  private _authUsersList = "http://localhost:3001/api/users";
-  private _newUser = "http://localhost:3001/api/users/create";
+  // private _authUsersList = "http://localhost:3001/api/users";
+  private _authUsersList =
+    "https://heroku-react-users-app.herokuapp.com/api/users";
+  // private _newUser = "http://localhost:3001/api/users/create";
+  private _newUser =
+    "https://heroku-react-users-app.herokuapp.com/api/users/create";
   users: any = [];
 
   constructor(private http: HttpClient) {}
