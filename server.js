@@ -1,11 +1,12 @@
 const express = require("express");
-const app = express();
 const path = require("path");
 
-app.use(express.static(dirname + "/dist"));
-app.listern(process.env.PORT || 8080);
-app.get("/*", function(req, res) {
-  res / semdFIle(path.join(_dirname + "/dist/index.html"));
+const app = express();
+app.use(express.static(".dist/users-angular-app"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(_dirname, "/dist/users-angular-app/index.html"));
 });
 
-console.log("console listening!!");
+app.listen(process.env.PORT || 8080, () => {
+  console.log("server starterd from server.js!!");
+});
